@@ -60,7 +60,7 @@ componentDidMount = async () => {
             <TextInput
                 keyboardType="numeric"
                 maxLength={4}
-                selectionColor={COLORS.green}
+                selectionColor={COLORS.black}
                 autoFocus
                 style={styles.otpInput}
                 onChange={(value) => this.setState({otpValue:value})}
@@ -80,7 +80,7 @@ componentDidMount = async () => {
 
             <View style={{marginTop:hp('2%')}}>
                 <TouchableOpacity
-                    onPress={() => console.log('submit goes here')}
+                    onPress={() => this.props.navigation.navigate('ChooseLocation')}
                     style={{
                         backgroundColor: COLORS.black,
                         marginTop: hp('2.5%'),

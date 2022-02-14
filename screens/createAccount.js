@@ -34,7 +34,9 @@ componentDidMount = async () => {
 
     render() {
          return (
-        <ScrollView behavior="height" style={styles.container}>
+        <ScrollView behavior="height" style={styles.container} 
+        showsVerticalScrollIndicator={false}>
+
             <View style={{
                 display:'flex',
                 justifyContent:'center',
@@ -219,7 +221,7 @@ componentDidMount = async () => {
 
             <View style={{marginTop:hp('2%')}}>
                 <TouchableOpacity
-                    onPress={() => console.log('login goes here')}
+                    onPress={() => this.props.navigation.navigate('ChangePassword')}
                     style={styles.signupBtn}
                 >
                     <Text style={{ fontWeight:'bold', color:COLORS.white, fontSize:wp('6%') }}>Sign up</Text>

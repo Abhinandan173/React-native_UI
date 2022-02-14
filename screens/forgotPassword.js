@@ -27,7 +27,7 @@ componentDidMount = async () => {
 
     render() {
          return (
-        <ScrollView behavior="height" style={styles.container}>
+        <ScrollView behavior="height" style={styles.container} showsVerticalScrollIndicator={false}>
             
             <View style={{
                 display:'flex',
@@ -75,7 +75,7 @@ componentDidMount = async () => {
 
             <View style={{marginTop:hp('2%')}}>
                 <TouchableOpacity
-                    onPress={() => console.log('****')}
+                    onPress={() => this.props.navigation.navigate('OtpScreen')}
                     style={{
                         backgroundColor: COLORS.black,
                         marginTop: hp('2.5%'),

@@ -31,7 +31,7 @@ componentDidMount = async () => {
 
     render() {
          return (
-        <ScrollView behavior="height" style={styles.container}>
+        <ScrollView behavior="height" style={styles.container} showsVerticalScrollIndicator={false}>
             <View style={{
                 display:'flex',
                 justifyContent:'center',
@@ -61,7 +61,9 @@ componentDidMount = async () => {
                 <Text style={{fontSize:wp('4%'),}}>
                     Don’t have an account? /
                 </Text>
-                <TouchableOpacity >
+                <TouchableOpacity 
+                    onPress={() => this.props.navigation.navigate('CreateAccount')}
+                >
                     <Text style={{fontSize:wp('5%'),fontWeight:'bold'}}>Create Account</Text>
                 </TouchableOpacity>
             </View>
@@ -169,7 +171,7 @@ componentDidMount = async () => {
 
             <View style={{marginTop:hp('2%')}}>
                 <TouchableOpacity
-                    onPress={() => console.log('+++')}
+                    onPress={() => this.props.navigation.navigate('CreateAccount')}
                     style={styles.login}
                 >
                     <Text style={{ fontWeight:'bold', color:COLORS.white, fontSize:wp('6%') }}>Login</Text>

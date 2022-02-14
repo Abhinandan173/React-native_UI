@@ -8,6 +8,7 @@ import CreateAccount from './screens/createAccount';
 import OtpScreen from './screens/otpScreen';
 import ChangePassword from './screens/changePassword';
 import ForgotPassword from './screens/forgotPassword';
+import ChooseLocation from './screens/chooseLocation';
 
 const Stack = createStackNavigator();
 
@@ -29,10 +30,11 @@ export default class App extends React.Component {
       }}
     >
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      {/* <Stack.Screen name="CreateAccount" component={CreateAccount} /> */}
-      {/* <Stack.Screen name="OtpScreen" component={OtpScreen} /> */}
-      {/* <Stack.Screen name="ChangePassword" component={ChangePassword} /> */}
-      {/* <Stack.Screen name="ForgotPassword" component={ForgotPassword} /> */}
+      <Stack.Screen name="CreateAccount" component={CreateAccount} />
+      <Stack.Screen name="OtpScreen" component={OtpScreen} />
+      <Stack.Screen name="ChangePassword" component={ChangePassword} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="ChooseLocation" component={ChooseLocation} />
     </Stack.Navigator>
     </NavigationContainer>
     )
