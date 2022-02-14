@@ -1,20 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
+import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import LoginScreen from './screens/loginScreen';
+import { COLORS } from './screens/colors';
+import CreateAccount from './screens/createAccount';
+import OtpScreen from './screens/otpScreen';
+import ChangePassword from './screens/changePassword';
+import ForgotPassword from './screens/forgotPassword';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Stack = createStackNavigator();
+
+export default class App extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+  render(){
+    return(
+    <NavigationContainer >
+    <Stack.Navigator
+      initialRouteName={'LoginScreen'}
+      screenOptions={{
+        headerShown: false,
+        cardStyle: {
+          backgroundColor: COLORS.black
+        }
+      }}
+    >
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      {/* <Stack.Screen name="CreateAccount" component={CreateAccount} /> */}
+      {/* <Stack.Screen name="OtpScreen" component={OtpScreen} /> */}
+      {/* <Stack.Screen name="ChangePassword" component={ChangePassword} /> */}
+      {/* <Stack.Screen name="ForgotPassword" component={ForgotPassword} /> */}
+    </Stack.Navigator>
+    </NavigationContainer>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: COLORS.darkBlack,
   },
 });
